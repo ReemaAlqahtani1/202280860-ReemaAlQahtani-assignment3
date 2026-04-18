@@ -81,7 +81,15 @@ const PROJECTS = [
     demo: "#",
     github: "#"
   }
-];  
+];
+
+// State object stores saved user preferences
+const state = {
+  projectFilter: localStorage.getItem("projectFilter") || "all",
+  projectSort: localStorage.getItem("projectSort") || "newest",
+  projectView: localStorage.getItem("projectView") || "grid"
+};
+
 /* =========================
    Initialize After DOM Loaded
    Ensures elements exist before JS runs
