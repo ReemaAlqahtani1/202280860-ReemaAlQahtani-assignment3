@@ -144,12 +144,46 @@
           <h2>Projects</h2>
           <p>A glimpse into the work I’ve built and the problems I’ve solved.</p>
         </div>
-
-        <!-- Project Cards -->
-        <div class="cards">
+        
+        <!-- Project Controls -->
+        <div class="project-panel">
+          <div class="project-controls">
+            <div class="control-group">
+              <label for="ProjectFilter">Filter</label>
+              <select id="ProjectFilter">
+                <option value="all">All</option>
+                <option value="web">Web</option>
+                <option value="database">Database</option>
+                <option value="ai">AI</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="projectSort">Sort</label>
+              <select id="projectSort">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="az">Name (A-Z)</option>
+                <option value="za">Name (Z-A)</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label>View</label>
+              <div class="view-toggle" id="viewToggle">
+                <button type="button" class="view-btn is-active" data-view="grid">Grid</button>
+                <button type="button" class="view-btn" data-view="list">List</button>
+              </div>
+            </div>
+          </div>
+          <p class="projects-feedback" id="projectsFeedback" aria-live="polite"></p>
+        </div>
+        <div class="cards" id="projectsList">
+          <!-- Projects rendered by JS-->
+        </div>
+      </div>
+    </section>
 
           <!-- Project 1 -->
-          <article class="card">
+          <!-- <article class="card">
             <img src="assets/images/project-placeholder-1.png" alt="Smart Recipe Recommendation project preview" />
             <div class="card-body">
               <h3>Pantrix: Smart Recipe Recommendation</h3>
@@ -161,10 +195,10 @@
                 <a href="#">GitHub</a>
               </div>
             </div>
-          </article>
+          </article> -->
 
           <!-- Project 2 -->
-          <article class="card">
+          <!-- <article class="card">
             <img src="assets/images/project-placeholder-2.png" alt="Horse Riding Management System project preview" />
             <div class="card-body">
               <h3>Horse Riding Management System</h3>
@@ -181,7 +215,7 @@
 
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- =========================
          Contact Section
