@@ -3,6 +3,7 @@
 // Shorter way to use querySelector
 // =========================
 const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => document.querySelectorAll(sel);
 
 
 /* =========================
@@ -15,6 +16,13 @@ const form = $("#contactForm");         // Contact form
 const statusEl = $("#formStatus");      // Form status message
 const navToggle = $(".nav-toggle");     // Mobile menu button
 const navMenu = $("#navMenu");          // Navigation menu container
+
+const projectFilterEl = $("#projectFilter");        // Project filter dropdown
+const projectSortEl = $("#projectSort");            // Project sort dropdown
+const projectsListEl = $("#projectsList");          // Container for project items
+const projectsFeedbackEl = $("#projectsFeedback");  // Feedback message showing number of filtered projects 
+const viewToggleEl = $("#viewToggle");              // Button to toggle between grid and list view for projects
+
 
 
 /* =========================
@@ -42,7 +50,38 @@ const SKILLS = [
   { name: "Streamlit", level: "Good", category: "tools" },
 ];
 
-
+/* =========================
+   Projects array used for dynamic rendering
+========================= */
+const PROJECTS = [
+  {
+    title: "Pantrix: Smart Recipe Recommendation System",
+    description: "A web application that recommends recipes based on available ingredients with smart filtering.",
+    category: "web",
+    date: "2026-02-01",
+    image:"assets/images/project-placeholder-1.png",
+    demo: "#",
+    github: "#"
+  },
+  {
+    title: "Horse Riding Management System",
+    description: "A database-driven system for managing horses, riders, and competitions.",
+    category: "database",
+    date: "2025-12-15",
+    image: "assets/images/project-placeholder-2.png",
+    demo: "#",
+    github: "#"
+  },
+  {
+    title: "Shopping Cart Abandonment Prediction",
+    description: "A machine learning project for predicting shopping cart abandonment.",
+    category: "ai",
+    date: "2025-02-01",
+    image: "assets/images/project-placeholder-3.png",
+    demo: "#",
+    github: "#"
+  }
+];  
 /* =========================
    Initialize After DOM Loaded
    Ensures elements exist before JS runs
