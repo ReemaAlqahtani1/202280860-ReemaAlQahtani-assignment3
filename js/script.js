@@ -287,8 +287,7 @@ function setupSkillsFilter() {
 
 
 /* =========================
-   Security Helper
-   Escapes HTML to prevent injection
+  Helpers
 ========================= */
 function escapeHtml(str) {
   return String(str)
@@ -297,4 +296,16 @@ function escapeHtml(str) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short"
+  });
 }
