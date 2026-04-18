@@ -23,6 +23,10 @@ const projectsListEl = $("#projectsList");          // Container for project ite
 const projectsFeedbackEl = $("#projectsFeedback");  // Feedback message showing number of filtered projects 
 const viewToggleEl = $("#viewToggle");              // Button to toggle between grid and list view for projects
 
+const loadReposBtn = $("#loadReposBtn");            // Button to load GitHub repositories
+const githubStatus = $("#githubStatus");            // GitHub status message
+const githubList = $("#githubList");                // Container for GitHub repositories
+
 const GITHUB_USERNAME = "ReemaAlqahtani1";          // GitHub username for fetching repositories
 /* =========================
    Skills Data (Static Data Source)
