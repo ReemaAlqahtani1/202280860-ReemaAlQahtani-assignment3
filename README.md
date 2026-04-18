@@ -162,16 +162,28 @@ git clone https://github.com/ReemaAlqahtani1/202280860-ReemaAlQahtani-assignment
 ```
 
 #### 2. Open the project folder
+```bash
+cd 202280860-ReemaAlQahtani-assignment3
+```
 
-#### 3. Open `index.html` in your browser
+#### 3.	Run a local server (recommended for JavaScript and API features):
 
--   Double-click the file
+Using Python:
+```bash
+python3 -m http.server 8080
+```
 
-OR
+#### 4.	Open your browser and visit:
 
--   Right-click → Open with your browser
+```bash
+http://localhost:8080
+```
 
-No installation or dependencies are required.
+Alternatively, if using VS Code, you can:
+-	Right click on index.html
+-	Select Open with Live Server
+
+This project does not require npm install or any external dependencies.
 
 ------------------------------------------------------------------------
 
