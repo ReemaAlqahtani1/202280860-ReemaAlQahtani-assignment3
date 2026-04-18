@@ -153,6 +153,16 @@ This demonstrates practical API integration using JavaScript.
 
 ------------------------------------------------------------------------
 
+## Live Demo
+
+The project is deployed using GitHub Pages and can be accessed here:
+
+https://reemaalqahtani1.github.io/
+
+You can open the live website directly from the browser without any installation.
+
+------------------------------------------------------------------------
+
 ## How to Run Locally
 
 #### 1. Clone the repository

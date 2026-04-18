@@ -68,7 +68,7 @@ const PROJECTS = [
     title: "Horse Riding Management System",
     description: "A database-driven system for managing horses, riders, and competitions.",
     category: "database",
-    date: "2025-12-15",
+    date: "2025-09-15",
     image: "assets/images/project-placeholder-2.png",
     demo: "#",
     github: "#"
@@ -77,7 +77,7 @@ const PROJECTS = [
     title: "Shopping Cart Abandonment Prediction",
     description: "A machine learning project for predicting shopping cart abandonment.",
     category: "ai",
-    date: "2025-02-01",
+    date: "2024-09-01",
     image: "assets/images/project-placeholder-3.png",
     demo: "#",
     github: "#"
