@@ -149,8 +149,8 @@
         <div class="project-panel">
           <div class="project-controls">
             <div class="control-group">
-              <label for="ProjectFilter">Filter</label>
-              <select id="ProjectFilter">
+              <label for="projectFilter">Filter</label>
+              <select id="projectFilter">
                 <option value="all">All</option>
                 <option value="web">Web</option>
                 <option value="database">Database</option>
@@ -182,40 +182,33 @@
       </div>
     </section>
 
-          <!-- Project 1 -->
-          <!-- <article class="card">
-            <img src="assets/images/project-placeholder-1.png" alt="Smart Recipe Recommendation project preview" />
-            <div class="card-body">
-              <h3>Pantrix: Smart Recipe Recommendation</h3>
-              <p>
-                A web application that recommends recipes based on available ingredients, with intelligent filtering by time, allergies, and meal type.
-              </p>
-              <div class="card-links">
-                <a href="#">Demo</a>
-                <a href="#">GitHub</a>
-              </div>
-            </div>
-          </article> -->
 
-          <!-- Project 2 -->
-          <!-- <article class="card">
-            <img src="assets/images/project-placeholder-2.png" alt="Horse Riding Management System project preview" />
-            <div class="card-body">
-              <h3>Horse Riding Management System</h3>
-              <p>
-                A structured database-driven system designed to manage horses, riders, trainers, and competitions. 
-                The system ensures data integrity through well-designed schemas, SQL queries, and relational constraints.
-              </p>
-              <div class="card-links">
-                <a href="#">Demo</a>
-                <a href="#">GitHub</a>
-              </div>
-            </div>
-          </article>
+    <!-- =========================
+         GitHub Section
+    ========================== -->
+    <section class="section" id="github">
+      <div class="container">
+        <!-- Section Title -->
+        <div class="section-head">
+          <h2>GitHub Repositories</h2>
+          <p>Latest public repositories loaded dynamically from GitHub API.</p>
+        </div>
 
+        <div class="github-box">
+          <!-- Button to fetch repositories -->
+          <button class="btn" id="loadReposBtn" type="button">
+            Load GitHub Repositories
+          </button>
+          <!-- GitHub API loading / success / error message -->
+          <p class="github-status" id="githubStatus" aria-live="polite"></p>
+          <!-- Repositories rendered dynamically by JavaScript -->
+          <div class="github-grid" id="githubList">
+            <!-- GitHub repositories injected dynamically via JS -->
+          </div>
         </div>
       </div>
-    </section> -->
+    </section>
+
 
     <!-- =========================
          Contact Section
