@@ -157,7 +157,7 @@ This demonstrates practical API integration using JavaScript.
 
 The project is deployed using GitHub Pages and can be accessed here:
 
-https://reemaalqahtani1.github.io/
+https://reemaalqahtani1.github.io/202280860-ReemaAlQahtani-assignment3/
 
 You can open the live website directly from the browser without any installation.
 
