@@ -113,6 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize skills filtering system
   setupSkillsFilter();
+  // Start projects system
+  setupProjects();
 });
 
 
@@ -195,7 +197,7 @@ function closeMobileNavOnLink(e) {
 ========================= */
 function handleContactSubmit(e) {
   e.preventDefault();
-  if (!statusEl) return;
+  if (!statusEl|| !form) return;
 
   const name = $("#name")?.value.trim() || "";
   const email = $("#email")?.value.trim() || "";
@@ -203,22 +205,28 @@ function handleContactSubmit(e) {
 
   // Check required fields
   if (!name || !email || !message) {
-    statusEl.textContent = "Please fill out all fields.";
-    statusEl.className = "form-status error";
+    showFormMessage("Please fill out all fields.","error");
+    return;
+  }
+
+  if (name.length < 2) {
+    showFormMessage("Name must be at least 2 characters long.","error");
     return;
   }
 
   // Basic email validation using regex
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   if (!emailOk) {
-    statusEl.textContent = "Please enter a valid email address.";
-    statusEl.className = "form-status error";
+    showFormMessage("Please enter a valid email address.","error");
     return;
   }
 
+  if (message.length < 10) {
+    showFormMessage("Message must be at least 10 characters long.","error");
+    return;
+  }
   // Success message
-  statusEl.textContent = `Thanks, ${name}! Your message is ready to be sent.`;
-  statusEl.className = "form-status success";
+  showFormMessage(`Thanks, ${name}! Your message is ready to be sent.`,"success");
   form.reset();
 }
 
@@ -355,4 +363,9 @@ function formatDate(dateString) {
     year: "numeric",
     month: "short"
   });
+}
+
+function showFormMessage(message, type) {
+  statusEl.textContent = message;
+  statusEl.className = `form-status ${type}`;
 }
