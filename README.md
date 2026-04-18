@@ -155,15 +155,15 @@ This demonstrates practical API integration using JavaScript.
 
 ## How to Run Locally
 
-### 1. Clone the repository
+## 1. Clone the repository
 
 ``` bash
 git clone https://github.com/ReemaAlqahtani1/202280860-ReemaAlQahtani-assignment3.git
 ```
 
-### 2. Open the project folder
+## 2. Open the project folder
 
-### 3. Open `index.html` in your browser
+## 3. Open `index.html` in your browser
 
 -   Double-click the file
 
