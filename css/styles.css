@@ -2,54 +2,56 @@
    Theme Variables (Dark)
 ========================= */
 :root{
-  --bg: #0b0c10;
-  --surface: #12141b;
-  --surface-2: #171a24;
-  --text: #e9ecf1;
-  --muted: #b7beca;
-  --border: rgba(255,255,255,.12);
-  --accent: #7c5cff;
-  --accent-2: #22c55e;
-  --shadow: 0 10px 30px rgba(0,0,0,.25);
+  --bg: #050406;
+  --surface: #17121f;
+  --surface-2: #21192b;
+  --text: #f4effa;
+  --muted: #c5bdd4;
+  --border: rgba(255,255,255,.10);
+
+  --accent: #b38adf;
+  --accent-2: #7dd3a7;
+
+  --shadow: 0 12px 32px rgba(0,0,0,.28);
 
   --radius: 16px;
   --container: 1100px;
-  --focus: 0 0 0 3px rgba(124,92,255,.35);
+  --focus: 0 0 0 3px rgba(179,138,223,.30);
 
-  /* Glassy helpers (used by filter buttons) */
-  --glass-bg: rgba(255,255,255,.06);
+  --glass-bg: rgba(255,255,255,.05);
   --glass-bg-2: rgba(255,255,255,.08);
-  --glass-border: rgba(255,255,255,.14);
-  --glass-border-2: rgba(255,255,255,.22);
-  --glass-highlight: rgba(255,255,255,.12);
-  --glass-shadow: 0 16px 40px rgba(0,0,0,.25);
-  --glass-inset: inset 0 1px 0 rgba(255,255,255,.10);
+  --glass-border: rgba(255,255,255,.12);
+  --glass-border-2: rgba(255,255,255,.20);
+  --glass-highlight: rgba(255,255,255,.10);
+  --glass-shadow: 0 16px 40px rgba(0,0,0,.24);
+  --glass-inset: inset 0 1px 0 rgba(255,255,255,.08);
 }
 
 /* =========================
    Theme Variables (Light)
 ========================= */
 [data-theme="light"]{
-  --bg: #ffffff;
-  --surface: #f6f7fb;
+  --bg: #fcfaff;
+  --surface: #f5f0fb;
   --surface-2: #ffffff;
-  --text: #0f172a;
-  --muted: #475569;
-  --border: rgba(2,6,23,.12);
-  --accent: #4f46e5;
-  --accent-2: #16a34a;
-  --shadow: 0 10px 30px rgba(2,6,23,.10);
+  --text: #1d1630;
+  --muted: #6d6480;
+  --border: rgba(29,22,48,.10);
 
-  --focus: 0 0 0 3px rgba(79,70,229,.25);
+  --accent: #8f6ccf;
+  --accent-2: #3bb273;
 
-  /* Glassy helpers (used by filter buttons) */
-  --glass-bg: rgba(2,6,23,.04);
-  --glass-bg-2: rgba(2,6,23,.06);
-  --glass-border: rgba(2,6,23,.14);
-  --glass-border-2: rgba(2,6,23,.22);
-  --glass-highlight: rgba(255,255,255,.55);
-  --glass-shadow: 0 18px 40px rgba(2,6,23,.14);
-  --glass-inset: inset 0 1px 0 rgba(255,255,255,.65);
+  --shadow: 0 10px 28px rgba(29,22,48,.08);
+
+  --focus: 0 0 0 3px rgba(143,108,207,.22);
+
+  --glass-bg: rgba(29,22,48,.03);
+  --glass-bg-2: rgba(29,22,48,.05);
+  --glass-border: rgba(29,22,48,.10);
+  --glass-border-2: rgba(29,22,48,.18);
+  --glass-highlight: rgba(255,255,255,.65);
+  --glass-shadow: 0 18px 40px rgba(29,22,48,.10);
+  --glass-inset: inset 0 1px 0 rgba(255,255,255,.75);
 }
 
 /* =========================
@@ -66,9 +68,8 @@ body{
 }
 
 img{ max-width: 100%; display: block; }
-
 a{ color: inherit; text-decoration: none; }
-a:hover{ opacity: .9; }
+a:hover{ opacity: .95; }
 
 /* =========================
    Layout Helpers
@@ -112,25 +113,30 @@ a:hover{ opacity: .9; }
 }
 
 /* =========================
-   Buttons (Primary + Ghost)
+   Buttons
 ========================= */
 .btn{
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: .5rem;
-  padding: .75rem 1rem;
-  border-radius: 999px;
+  padding: .85rem 1.35rem;
+  border-radius: 14px;
   border: 1px solid transparent;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), #6d4cff);
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: .95rem;
   cursor: pointer;
-  transition: transform .08s ease, opacity .2s ease, background .2s ease, box-shadow .2s ease;
-  box-shadow: 0 10px 24px rgba(124,92,255,.16);
+  transition: transform .2s ease, box-shadow .25s ease, opacity .2s ease, background .2s ease;
+  box-shadow: 0 10px 24px rgba(124,92,255,.18);
 }
-.btn:hover{ opacity: .95; }
-.btn:active{ transform: translateY(1px); }
+.btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(124,92,255,.28);
+  opacity: 1;
+}
+.btn:active{ transform: translateY(0); }
 .btn:focus{ outline: none; box-shadow: var(--focus); }
 
 .btn-ghost{
@@ -140,7 +146,9 @@ a:hover{ opacity: .9; }
   box-shadow: none;
 }
 .btn-ghost:hover{
-  background: rgba(255,255,255,.04);
+  background: rgba(255,255,255,.05);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* =========================
@@ -167,7 +175,10 @@ a:hover{ opacity: .9; }
   gap: 1rem;
 }
 
-.logo{ font-weight: 800; letter-spacing: .2px; }
+.logo{
+  font-weight: 800;
+  letter-spacing: .2px;
+}
 
 .nav-toggle{
   display: none;
@@ -207,6 +218,7 @@ a:hover{ opacity: .9; }
    Hero Section
 ========================= */
 .hero{ padding-top: 4.25rem; }
+
 .hero-grid{
   display: grid;
   grid-template-columns: 1.2fr .8fr;
@@ -263,6 +275,10 @@ a:hover{ opacity: .9; }
   margin-top: 1rem;
 }
 
+.cards.list-view{
+  grid-template-columns: 1fr;
+}
+
 .card{
   border: 1px solid var(--border);
   background: var(--surface);
@@ -297,406 +313,13 @@ a:hover{ opacity: .9; }
 .card-links{
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 .card-links a{
   font-weight: 700;
   color: var(--accent);
 }
 .card-links a:hover{ text-decoration: underline; }
-
-/* =========================
-   Skills Section Container
-========================= */
-.skills-wrap{
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: var(--radius);
-  padding: 1rem;
-  box-shadow: var(--shadow);
-}
-
-.skills-toolbar{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-
-/* =========================
-   Skills Filters (Glassy Segmented Control)
-========================= */
-.skills-filters{
-  display: inline-flex;
-  align-items: center;
-  gap: .35rem;
-  flex-wrap: wrap;
-
-  padding: .4rem;
-  border-radius: 999px;
-  border: 1px solid var(--glass-border);
-
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
-  background-color: var(--glass-bg);
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  box-shadow: var(--glass-inset), 0 10px 30px rgba(0,0,0,.20);
-}
-
-.filter-btn{
-  position: relative;
-  appearance: none;
-  border: 1px solid transparent;
-  background: transparent;
-  color: var(--muted);
-  font-weight: 800;
-  letter-spacing: .1px;
-
-  padding: .58rem .95rem;
-  border-radius: 999px;
-  cursor: pointer;
-
-  transition: background .22s ease, color .22s ease, transform .08s ease, box-shadow .22s ease, border-color .22s ease;
-}
-
-.filter-btn::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  opacity: 0;
-  background: radial-gradient(120% 120% at 30% 20%, rgba(255,255,255,.16), transparent 55%);
-  transition: opacity .22s ease;
-}
-
-.filter-btn:hover{
-  color: var(--text);
-  border-color: var(--glass-border);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
-  background-color: var(--glass-bg-2);
-  box-shadow: 0 10px 24px rgba(0,0,0,.18);
-}
-.filter-btn:hover::before{ opacity: 1; }
-
-.filter-btn:active{ transform: translateY(1px); }
-
-.filter-btn:focus{
-  outline: none;
-  box-shadow: var(--focus);
-}
-
-.filter-btn.is-active{
-  color: #fff;
-  border-color: rgba(255,255,255,.18);
-
-  background:
-    radial-gradient(120% 120% at 30% 20%, rgba(255,255,255,.18), transparent 55%),
-    linear-gradient(135deg, var(--accent), rgba(124,92,255,.62));
-  box-shadow:
-    0 14px 34px rgba(124,92,255,.24),
-    inset 0 1px 0 rgba(255,255,255,.18);
-}
-.filter-btn.is-active::before{ opacity: 1; }
-
-/* Optional: count badge if you add data-count */
-.filter-btn[data-count]{
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-}
-.filter-btn[data-count]::after{
-  content: attr(data-count);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-width: 1.55rem;
-  height: 1.15rem;
-  padding: 0 .45rem;
-
-  border-radius: 999px;
-  font-size: .78rem;
-  font-weight: 900;
-  line-height: 1;
-
-  background: rgba(255,255,255,.10);
-  border: 1px solid rgba(255,255,255,.16);
-  color: rgba(255,255,255,.92);
-}
-.filter-btn:not(.is-active)[data-count]::after{
-  background: rgba(183,190,202,.12);
-  border-color: rgba(183,190,202,.18);
-  color: var(--muted);
-}
-
-/* =========================
-   Skills Search Input
-   Allows live searching inside skills
-========================= */
-.skills-search-wrap{
-  margin-bottom: 1rem;
-}
-
-.skill-search{
-  width: 100%;
-  max-width: 360px;
-  padding: .85rem 1rem;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  background: var(--surface-2);
-  color: var(--text);
-  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
-}
-.skill-search::placeholder{
-  color: rgba(183,190,202,.75);
-}
-.skill-search:focus{
-  outline: none;
-  box-shadow: var(--focus);
-  border-color: rgba(124,92,255,.45);
-}
-
-/* =========================
-   Skills Feedback Message
-   Shows result count or empty state
-========================= */
-.skills-feedback{
-  min-height: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--muted);
-  font-weight: 600;
-}
-
-/* Skills list pills */
-.skills-grid{
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem;
-}
-
-.skill-pill{
-  display: inline-flex;
-  align-items: center;
-  gap: .55rem;
-  padding: .6rem .75rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--surface-2);
-  animation: fadeIn .3s ease;
-}
-
-.skill-name{ font-weight: 800; }
-
-.skill-level{
-  font-size: .9rem;
-  padding: .2rem .5rem;
-  border-radius: 999px;
-  background: rgba(124,92,255,.18);
-  color: var(--text);
-  border: 1px solid rgba(124,92,255,.25);
-}
-
-/* =========================
-   Contact Form
-========================= */
-.form{
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: var(--radius);
-  padding: 1rem;
-  box-shadow: var(--shadow);
-  max-width: 720px;
-}
-
-.form-row{
-  display: grid;
-  gap: .35rem;
-  margin-bottom: .9rem;
-}
-
-label{
-  font-weight: 700;
-  color: var(--muted);
-}
-
-input, textarea{
-  width: 100%;
-  padding: .75rem .85rem;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--surface-2);
-  color: var(--text);
-}
-input::placeholder, textarea::placeholder{
-  color: rgba(183,190,202,.75);
-}
-input:focus, textarea:focus{
-  outline: none;
-  box-shadow: var(--focus);
-  border-color: rgba(124,92,255,.45);
-}
-
-/* Important: Message box fixed (no resize) */
-textarea{
-  resize: none;
-  min-height: 160px;
-}
-
-/* =========================
-   Form Status Feedback
-   Animated success / error messages
-========================= */
-.form-status{
-  margin: .75rem 0 0 0;
-  font-weight: 600;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity .25s ease, transform .25s ease, color .25s ease;
-}
-
-.form-status.success,
-.form-status.error{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.form-status.success{
-  color: var(--accent-2);
-}
-
-.form-status.error{
-  color: #ef4444;
-}
-
-/* =========================
-   Footer
-========================= */
-.site-footer{
-  border-top: 1px solid var(--border);
-  padding: 1.5rem 0;
-  background: rgba(0,0,0,.12);
-}
-[data-theme="light"] .site-footer{
-  background: rgba(2,6,23,.03);
-}
-
-.footer-inner{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.site-footer p{
-  margin: 0;
-  color: var(--muted);
-}
-.site-footer a{
-  color: var(--accent);
-  font-weight: 700;
-}
-.site-footer a:hover{ text-decoration: underline; }
-
-/* =========================
-   Small Fade-In Animation
-   Used for skill pills
-========================= */
-@keyframes fadeIn{
-  from{
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to{
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* =========================
-   Projects Controls Panel
-========================= */
-.projects-panel{
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: var(--radius);
-  padding: 1rem;
-  box-shadow: var(--shadow);
-}
-
-.projects-controls{
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: end;
-}
-
-.control-group{
-  display: grid;
-  gap: .35rem;
-}
-
-.control-group label{
-  font-weight: 700;
-  color: var(--muted);
-}
-
-select{
-  min-width: 170px;
-  padding: .75rem .85rem;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--surface-2);
-  color: var(--text);
-}
-
-select:focus{
-  outline: none;
-  box-shadow: var(--focus);
-  border-color: rgba(124,92,255,.45);
-}
-
-.view-toggle{
-  display: inline-flex;
-  gap: .4rem;
-  flex-wrap: wrap;
-}
-
-.view-btn{
-  border: 1px solid var(--border);
-  background: var(--surface-2);
-  color: var(--text);
-  border-radius: 999px;
-  padding: .65rem .95rem;
-  cursor: pointer;
-  font-weight: 700;
-  transition: background .2s ease, color .2s ease, border-color .2s ease;
-}
-
-.view-btn.is-active{
-  background: var(--accent);
-  color: #fff;
-  border-color: transparent;
-}
-
-.projects-feedback{
-  margin: .85rem 0 0 0;
-  color: var(--muted);
-  font-weight: 600;
-}
-
-/* =========================
-   Project Card Extra Details
-========================= */
-.cards.list-view{
-  grid-template-columns: 1fr;
-}
 
 .card-meta{
   display: flex;
@@ -723,6 +346,262 @@ select:focus{
   color: var(--muted);
   font-size: .92rem;
   font-weight: 600;
+}
+
+/* =========================
+   Projects Controls Panel
+========================= */
+.projects-panel{
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.projects-controls{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.control-group{
+  display: grid;
+  gap: .35rem;
+  min-width: 190px;
+  align-content: start;
+}
+
+.control-group label{
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.control-group select{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  min-width: 190px;
+  padding: .9rem 2.8rem .9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background-color: var(--surface-2);
+  color: var(--text);
+  font-size: .95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) calc(50% - 3px),
+    calc(100% - 14px) calc(50% - 3px);
+  background-size: 7px 7px, 7px 7px;
+  background-repeat: no-repeat;
+
+  transition: border-color .22s ease, box-shadow .22s ease, transform .18s ease, background-color .22s ease;
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+
+.control-group select:hover{
+  border-color: rgba(124,92,255,.35);
+  background-color: var(--surface);
+}
+
+.control-group select:focus{
+  outline: none;
+  border-color: rgba(124,92,255,.55);
+  box-shadow: var(--focus);
+}
+
+.control-group select option{
+  background: var(--surface);
+  color: var(--text);
+}
+
+.view-toggle{
+  display: inline-flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+}
+
+.view-btn{
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  border-radius: 12px;
+  padding: .7rem 1rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all .25s ease;
+}
+
+.view-btn:hover{
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.view-btn.is-active{
+  background: linear-gradient(135deg, var(--accent), #6d4cff);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(124,92,255,.18);
+}
+
+.projects-feedback{
+  margin: .85rem 0 0 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* =========================
+   Skills Section Container
+========================= */
+.skills-wrap{
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.skills-toolbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   Skills Filters
+========================= */
+.skills-filters{
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  flex-wrap: wrap;
+  padding: .4rem;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-inset), 0 10px 30px rgba(0,0,0,.20);
+}
+
+.filter-btn{
+  position: relative;
+  appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: .1px;
+  padding: .65rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+.filter-btn::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(120% 120% at 30% 20%, rgba(255,255,255,.16), transparent 55%);
+  transition: opacity .22s ease;
+}
+
+.filter-btn:hover{
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+}
+.filter-btn:hover::before{ opacity: 1; }
+
+.filter-btn:active{ transform: translateY(1px); }
+
+.filter-btn:focus{
+  outline: none;
+  box-shadow: var(--focus);
+}
+
+.filter-btn.is-active{
+  background: linear-gradient(135deg, var(--accent), #6d4cff);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 10px 24px rgba(124,92,255,.18);
+}
+.filter-btn.is-active::before{ opacity: 1; }
+
+/* =========================
+   Skills Search Input
+========================= */
+.skills-search-wrap{
+  margin-bottom: 1rem;
+}
+
+.skill-search{
+  width: 100%;
+  max-width: 360px;
+  padding: .85rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.skill-search::placeholder{
+  color: rgba(183,190,202,.75);
+}
+.skill-search:focus{
+  outline: none;
+  box-shadow: var(--focus);
+  border-color: rgba(124,92,255,.45);
+}
+
+.skills-feedback{
+  min-height: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.skills-grid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+
+.skill-pill{
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .6rem .75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  animation: fadeIn .3s ease;
+}
+
+.skill-name{ font-weight: 800; }
+
+.skill-level{
+  font-size: .9rem;
+  padding: .2rem .5rem;
+  border-radius: 999px;
+  background: rgba(124,92,255,.18);
+  color: var(--text);
+  border: 1px solid rgba(124,92,255,.25);
 }
 
 /* =========================
@@ -786,6 +665,116 @@ select:focus{
 }
 
 /* =========================
+   Contact Form
+========================= */
+.form{
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  max-width: 720px;
+}
+
+.form-row{
+  display: grid;
+  gap: .35rem;
+  margin-bottom: .9rem;
+}
+
+label{
+  font-weight: 700;
+  color: var(--muted);
+}
+
+input, textarea{
+  width: 100%;
+  padding: .75rem .85rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+}
+input::placeholder, textarea::placeholder{
+  color: rgba(183,190,202,.75);
+}
+input:focus, textarea:focus{
+  outline: none;
+  box-shadow: var(--focus);
+  border-color: rgba(124,92,255,.45);
+}
+
+textarea{
+  resize: none;
+  min-height: 160px;
+}
+
+.form-status{
+  margin: .75rem 0 0 0;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity .25s ease, transform .25s ease, color .25s ease;
+}
+
+.form-status.success,
+.form-status.error{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-status.success{
+  color: var(--accent-2);
+}
+
+.form-status.error{
+  color: #ef4444;
+}
+
+/* =========================
+   Footer
+========================= */
+.site-footer{
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+  background: rgba(0,0,0,.12);
+}
+[data-theme="light"] .site-footer{
+  background: rgba(2,6,23,.03);
+}
+
+.footer-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.site-footer p{
+  margin: 0;
+  color: var(--muted);
+}
+.site-footer a{
+  color: var(--accent);
+  font-weight: 700;
+}
+.site-footer a:hover{ text-decoration: underline; }
+
+/* =========================
+   Small Fade-In Animation
+========================= */
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
    Responsive
 ========================= */
 @media (max-width: 900px){
@@ -827,7 +816,6 @@ select:focus{
 
   .cards{ grid-template-columns: 1fr; }
 
-  /* Mobile: keep project image visible even with narrow widths */
   .card img{
     width: 100%;
     aspect-ratio: 16 / 10;
@@ -836,22 +824,21 @@ select:focus{
     padding: 1rem;
   }
 
-  /* Mobile: wrap filters nicely */
   .skills-filters{
     border-radius: 16px;
     padding: .45rem;
     gap: .45rem;
   }
+
   .filter-btn{
     flex: 1 1 auto;
     text-align: center;
   }
 
-  /* Mobile: search input uses full width */
   .skill-search{
     max-width: 100%;
   }
-  /* Mobile: stack project controls */
+
   .projects-controls{
     flex-direction: column;
     align-items: stretch;
@@ -861,7 +848,7 @@ select:focus{
     width: 100%;
   }
 
-  select{
+  .control-group select{
     width: 100%;
   }
 
@@ -874,4 +861,3 @@ select:focus{
     text-align: center;
   }
 }
-
