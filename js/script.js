@@ -3,8 +3,6 @@
 // Shorter way to use querySelector
 // =========================
 const $ = (sel) => document.querySelector(sel);
-const $$ = (sel) => document.querySelectorAll(sel);
-
 
 /* =========================
    DOM Elements References
@@ -113,6 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (navToggle) navToggle.addEventListener("click", toggleMobileNav);
   if (navMenu) navMenu.addEventListener("click", closeMobileNavOnLink);
   if (form) form.addEventListener("submit", handleContactSubmit);
+  if (loadReposBtn) loadReposBtn.addEventListener("click", fetchGitHubRepos);
 
   // Initialize skills filtering system
   setupSkillsFilter();
