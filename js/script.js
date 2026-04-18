@@ -230,7 +230,6 @@ function handleContactSubmit(e) {
   form.reset();
 }
 
-
 /* =========================
    Skills Filtering + Search System
    - Filters by category
@@ -338,6 +337,119 @@ function setupSkillsFilter() {
     searchQuery = e.target.value.trim().toLowerCase();
     render();
   });
+}
+
+/* =========================
+   Projects Section
+========================= */
+
+function setupProjects() {
+  if (!projectFilterEl || !projectSortEl || !projectsListEl || !viewToggleEl) return;
+
+  projectFilterEl.value = state.projectFilter;
+  projectSortEl.value = state.projectSort;
+
+  // Update active view button style
+  updateViewButtons();
+  // Render projects using saved settings
+  renderProjects();
+
+  projectFilterEl.addEventListener("change", (e) => {
+    // Update state with selected filter
+    state.projectFilter = e.target.value;
+    localStorage.setItem("projectFilter", state.projectFilter);
+    renderProjects();
+  });
+
+  projectSortEl.addEventListener("change", (e) => {
+    // Update state with selected sort
+    state.projectSort = e.target.value;
+    localStorage.setItem("projectSort", state.projectSort);
+    renderProjects();
+  });
+
+  viewToggleEl.addEventListener("click", (e) => {
+    // Find clicked button
+    const btn = e.target.closest("button[data-view]");
+    // Stop if clicked item is not a view button
+    if (!btn) return;
+    state.projectView = btn.dataset.view;
+    localStorage.setItem("projectView", state.projectView);
+    updateViewButtons();
+    renderProjects();
+  });
+}
+
+
+function updateViewButtons() {
+  // Get all view buttons
+  const buttons = viewToggleEl.querySelectorAll("button[data-view]");
+  // Loop through buttons
+  buttons.forEach((btn) => {
+    btn.classList.toggle("is-active", btn.dataset.view === state.projectView);
+  });
+}
+
+// Function that filters, sorts, and displays project cards
+function renderProjects() {
+  let items = [...PROJECTS];
+  // Filter projects by category if selected filter is not "all"
+  if (state.projectFilter !== "all") {
+    items = items.filter((project) => project.category === state.projectFilter);
+  }
+  // Sort by newest first
+  if (state.projectSort === "newest") {
+    items.sort((a, b) => new Date(b.date) - new Date(a.date));
+  }
+  // Sort by oldest first
+  else if (state.projectSort === "oldest") {
+    items.sort((a, b) => new Date(a.date) - new Date(b.date));
+  }
+  // Sort alphabetically A to Z
+  else if (state.projectSort === "az") {
+    items.sort((a, b) => a.title.localeCompare(b.title));
+  }
+  // Sort alphabetically Z to A
+  else if (state.projectSort === "za") {
+    items.sort((a, b) => b.title.localeCompare(a.title));
+  }
+  // Switch CSS class depending on selected view mode
+  projectsListEl.className = state.projectView === "list" ? "cards list-view" : "cards";
+  // Show message if no matching projects are found
+  if (items.length === 0) {
+    projectsListEl.innerHTML = "";
+    if (projectsFeedbackEl) {
+      projectsFeedbackEl.textContent = "No projects match the selected filter.";
+    }
+    return;
+  }
+  // Show number of displayed projects
+  if (projectsFeedbackEl) {
+    projectsFeedbackEl.textContent = `${items.length} project${items.length > 1 ? "s" : ""} shown.`;
+  }
+  // Render all matching project cards
+  projectsListEl.innerHTML = items.map(projectCardTemplate).join("");
+}
+
+// Function that returns HTML for one project card
+function projectCardTemplate(project) {
+  return `
+    <article class="card">
+      <img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.title)} preview" />
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="tag">${escapeHtml(capitalize(project.category))}</span>
+          <span class="project-date">${formatDate(project.date)}</span>
+        </div>
+        <h3>${escapeHtml(project.title)}</h3>
+        <p>${escapeHtml(project.description)}</p>
+        <div class="card-links">
+          <a href="${escapeHtml(project.demo)}" target="_blank" rel="noopener noreferrer">Demo</a>
+          <a href="${escapeHtml(project.github)}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </article>
+  `;
 }
 
 
