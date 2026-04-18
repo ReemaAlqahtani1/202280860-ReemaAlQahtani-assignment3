@@ -56,15 +56,15 @@ concepts and adapting them to fit assignment requirements.
 
 ### Benefits
 
--   Faster clarification of advanced JavaScript concepts\
--   Improved debugging efficiency\
--   Better structured project logic\
+-   Faster clarification of advanced JavaScript concepts
+-   Improved debugging efficiency
+-   Better structured project logic
 -   Enhanced UI consistency and professional design
 
 ### Challenges
 
--   Some API-related suggestions required simplification\
--   Needed manual verification to ensure correctness\
+-   Some API-related suggestions required simplification
+-   Needed manual verification to ensure correctness
 -   Adjusted complexity to match course scope and assignment
     requirements
 
@@ -74,11 +74,11 @@ concepts and adapting them to fit assignment requirements.
 
 Through guided AI assistance, I:
 
--   Strengthened my understanding of Fetch API and async/await\
--   Improved dynamic rendering techniques using JavaScript\
--   Learned how to integrate external APIs into front-end projects\
--   Applied LocalStorage more effectively for saving user preferences\
--   Improved responsive UI design for advanced controls\
+-   Strengthened my understanding of Fetch API and async/await
+-   Improved dynamic rendering techniques using JavaScript
+-   Learned how to integrate external APIs into front-end projects
+-   Applied LocalStorage more effectively for saving user preferences
+-   Improved responsive UI design for advanced controls
 -   Enhanced overall project structure and maintainability
 
 ------------------------------------------------------------------------

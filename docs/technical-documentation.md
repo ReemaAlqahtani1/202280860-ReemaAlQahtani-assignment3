@@ -9,9 +9,9 @@
 This project is an advanced version of the personal portfolio website
 built using:
 
--   HTML5\
--   CSS3\
--   Vanilla JavaScript\
+-   HTML5
+-   CSS3
+-   Vanilla JavaScript
 -   GitHub REST API
 
 The purpose of the project is to demonstrate advanced front-end
@@ -52,11 +52,11 @@ interaction.
 
 The website uses semantic HTML elements for clarity and structure:
 
--   `<header>` -- Navigation bar\
--   `<main>` -- Main content container\
--   `<section>` -- About, Skills, Projects, GitHub, Contact\
--   `<article>` -- Project cards and repository cards\
--   `<form>` -- Contact form\
+-   `<header>` -- Navigation bar
+-   `<main>` -- Main content container
+-   `<section>` -- About, Skills, Projects, GitHub, Contact
+-   `<article>` -- Project cards and repository cards
+-   `<form>` -- Contact form
 -   `<footer>` -- Footer
 
 ------------------------------------------------------------------------
@@ -65,9 +65,9 @@ The website uses semantic HTML elements for clarity and structure:
 
 ### 1. About Section
 
--   Dynamic greeting based on time of day\
--   Professional introduction\
--   Profile image\
+-   Dynamic greeting based on time of day
+-   Professional introduction
+-   Profile image
 -   Call-to-action buttons
 
 ------------------------------------------------------------------------

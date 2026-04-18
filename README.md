@@ -7,7 +7,7 @@
 ## Project Description
 
 This project represents the **third phase** of my personal portfolio
-website.\
+website.
 It builds on the previous assignments by adding **advanced project
 management features, GitHub API integration, improved filtering systems,
 and enhanced UI/UX design**.
@@ -18,14 +18,14 @@ consumption, and modern interactive design.
 
 The website contains five main sections:
 
--   **About Me** --- Personal introduction with dynamic time-based
-    greeting\
--   **Skills** --- Searchable and filterable skills section\
--   **Projects** --- Dynamic projects section with filtering, sorting,
-    and view modes\
--   **GitHub Repositories** --- Live GitHub API integration for public
-    repositories\
--   **Contact** --- Interactive frontend form with validation
+-   **About Me** - Personal introduction with dynamic time-based
+    greeting
+-   **Skills** - Searchable and filterable skills section
+-   **Projects** - Dynamic projects section with filtering, sorting,
+    and view modes
+-   **GitHub Repositories** - Live GitHub API integration for public
+    repositories
+-   **Contact** - Interactive frontend form with validation
 
 Assignment 3 focuses on improving **dynamic functionality, API
 integration, advanced UI controls, and professional user experience**.
@@ -38,23 +38,23 @@ integration, advanced UI controls, and professional user experience**.
 
 -   **CSS3**
 
-    -   Flexbox\
-    -   CSS Grid\
-    -   Media Queries\
-    -   CSS Variables\
-    -   Advanced UI Styling\
+    -   Flexbox
+    -   CSS Grid
+    -   Media Queries
+    -   CSS Variables
+    -   Advanced UI Styling
     -   Custom Dropdown Design
 
 -   **Vanilla JavaScript**
 
-    -   DOM Manipulation\
-    -   Event Handling\
-    -   LocalStorage API\
-    -   Dynamic Content Rendering\
-    -   Fetch API\
+    -   DOM Manipulation
+    -   Event Handling
+    -   LocalStorage API
+    -   Dynamic Content Rendering
+    -   Fetch API
     -   Async/Await
 
--   **GitHub REST API**\
+-   **GitHub REST API**
 
 -   **ARIA attributes** for accessibility
 
@@ -62,18 +62,18 @@ integration, advanced UI controls, and professional user experience**.
 
 ## Key Features
 
--   Fully responsive layout (Desktop, Tablet, Mobile)\
--   Light/Dark theme toggle stored in `LocalStorage`\
--   Time-based dynamic greeting\
--   Mobile navigation menu with accessibility support\
--   Searchable and filterable Skills section\
+-   Fully responsive layout (Desktop, Tablet, Mobile)
+-   Light/Dark theme toggle stored in `LocalStorage`
+-   Time-based dynamic greeting
+-   Mobile navigation menu with accessibility support
+-   Searchable and filterable Skills section
 -   Dynamic Projects section with:
-    -   Category filtering\
-    -   Sorting options\
+    -   Category filtering
+    -   Sorting options
     -   Grid/List view toggle
--   GitHub API integration to load latest public repositories\
--   Client-side contact form validation\
--   Enhanced button design and modern dropdown styling\
+-   GitHub API integration to load latest public repositories
+-   Client-side contact form validation
+-   Enhanced button design and modern dropdown styling
 -   Accessibility improvements (ARIA attributes and keyboard navigation)
 
 ------------------------------------------------------------------------
@@ -88,14 +88,14 @@ A dynamic Projects section was implemented as a major advanced feature.
 
 -   Sorting options:
 
-    -   Newest First\
-    -   Oldest First\
-    -   Name (A-Z)\
+    -   Newest First
+    -   Oldest First
+    -   Name (A-Z)
     -   Name (Z-A)
 
 -   View mode toggle:
 
-    -   Grid View\
+    -   Grid View
     -   List View
 
 -   Dynamic rendering using JavaScript\
@@ -133,10 +133,10 @@ the GitHub API.
 
 -   Displaying:
 
-    -   Repository name\
-    -   Description\
-    -   Programming language\
-    -   Star count\
+    -   Repository name
+    -   Description
+    -   Programming language
+    -   Star count
     -   Repository link
 
 -   Error handling for failed API requests\
@@ -179,11 +179,11 @@ No installation or dependencies are required.
 
 AI tools were used to assist with:
 
--   Improving JavaScript logic and rendering systems\
--   GitHub API integration guidance\
--   UI/UX enhancement suggestions\
--   Responsive design improvements\
--   Debugging and optimization\
+-   Improving JavaScript logic and rendering systems
+-   GitHub API integration guidance
+-   UI/UX enhancement suggestions
+-   Responsive design improvements
+-   Debugging and optimization
 -   Documentation formatting
 
 A detailed explanation of AI assistance is provided in:
