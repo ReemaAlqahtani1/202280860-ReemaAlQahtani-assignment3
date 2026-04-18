@@ -23,8 +23,7 @@ const projectsListEl = $("#projectsList");          // Container for project ite
 const projectsFeedbackEl = $("#projectsFeedback");  // Feedback message showing number of filtered projects 
 const viewToggleEl = $("#viewToggle");              // Button to toggle between grid and list view for projects
 
-
-
+const GITHUB_USERNAME = "ReemaAlqahtani1";          // GitHub username for fetching repositories
 /* =========================
    Skills Data (Static Data Source)
    This array contains all skills displayed
@@ -452,6 +451,58 @@ function projectCardTemplate(project) {
   `;
 }
 
+/* =========================
+   GitHub API Section
+========================= */
+
+// Async function that fetches repositories from GitHub API
+async function fetchGitHubRepos() {
+  if (!githubStatus || !githubList) return;
+  githubStatus.textContent = "Loading repositories...";
+  // Clear old repository cards
+  githubList.innerHTML = "";
+
+  try {
+    // Send request to GitHub API
+    const response = await fetch(
+      `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6`
+    );
+    // Throw error if response failed
+    if (!response.ok) {
+      throw new Error("Failed to fetch repositories");
+    }
+    // Convert response to JSON
+    const repos = await response.json();
+    // Show message if no repositories are found
+    if (!repos.length) {
+      githubStatus.textContent = "No repositories found.";
+      return;
+    }
+    // Show success message
+    githubStatus.textContent = "Repositories loaded successfully.";
+    // Render repository cards
+    githubList.innerHTML = repos
+      .map(
+        (repo) => `
+          <article class="repo-card">
+            <h3>${escapeHtml(repo.name)}</h3>
+            <p>${escapeHtml(repo.description || "No description available.")}</p>
+            <div class="repo-meta">
+              <span>⭐ ${repo.stargazers_count}</span>
+              <span>${escapeHtml(repo.language || "N/A")}</span>
+            </div>
+            <a href="${escapeHtml(repo.html_url)}" target="_blank" rel="noopener noreferrer">View Repository</a>
+          </article>
+        `
+      )
+      .join("");
+  } catch (error) {
+    // Show friendly error message to user
+    githubStatus.textContent = "Sorry, something went wrong while loading GitHub data.";
+    // Print technical error in console for debugging
+    console.error(error);
+  }
+}
 
 /* =========================
   Helpers
