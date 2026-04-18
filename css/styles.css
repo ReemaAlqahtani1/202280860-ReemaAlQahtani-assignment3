@@ -618,12 +618,180 @@ textarea{
   }
 }
 
+
+/* =========================
+   Projects Controls Panel
+========================= */
+.projects-panel{
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.projects-controls{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.control-group{
+  display: grid;
+  gap: .35rem;
+}
+
+.control-group label{
+  font-weight: 700;
+  color: var(--muted);
+}
+
+select{
+  min-width: 170px;
+  padding: .75rem .85rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+select:focus{
+  outline: none;
+  box-shadow: var(--focus);
+  border-color: rgba(124,92,255,.45);
+}
+
+.view-toggle{
+  display: inline-flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+}
+
+.view-btn{
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  border-radius: 999px;
+  padding: .65rem .95rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.view-btn.is-active{
+  background: var(--accent);
+  color: #fff;
+  border-color: transparent;
+}
+
+.projects-feedback{
+  margin: .85rem 0 0 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* =========================
+   Project Card Extra Details
+========================= */
+.cards.list-view{
+  grid-template-columns: 1fr;
+}
+
+.card-meta{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-bottom: .7rem;
+  flex-wrap: wrap;
+}
+
+.tag{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .25rem .7rem;
+  border-radius: 999px;
+  font-size: .85rem;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.project-date{
+  color: var(--muted);
+  font-size: .92rem;
+  font-weight: 600;
+}
+
+/* =========================
+   GitHub Section
+========================= */
+.github-box{
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.github-status{
+  margin: 1rem 0 0 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.github-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.repo-card{
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.repo-card h3{
+  margin: 0 0 .45rem 0;
+  font-size: 1.1rem;
+}
+
+.repo-card p{
+  margin: 0 0 .8rem 0;
+  color: var(--muted);
+}
+
+.repo-meta{
+  display: flex;
+  gap: .8rem;
+  flex-wrap: wrap;
+  margin-bottom: .8rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.repo-card a{
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.repo-card a:hover{
+  text-decoration: underline;
+}
+
 /* =========================
    Responsive
 ========================= */
 @media (max-width: 900px){
   .hero-grid{ grid-template-columns: 1fr; }
   .profile{ order: -1; }
+  .github-grid{ grid-template-columns: 1fr; }
 }
 
 @media (max-width: 720px){
@@ -683,4 +851,27 @@ textarea{
   .skill-search{
     max-width: 100%;
   }
+  /* Mobile: stack project controls */
+  .projects-controls{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .control-group{
+    width: 100%;
+  }
+
+  select{
+    width: 100%;
+  }
+
+  .view-toggle{
+    width: 100%;
+  }
+
+  .view-btn{
+    flex: 1 1 auto;
+    text-align: center;
+  }
 }
+
